@@ -95,10 +95,6 @@ while actual_date_py<=end_date_py:
         interval_seconds = 86400*num_days
         addtime= dateutil.relativedelta.relativedelta(months=+1)
 
-# Year definition is not implemented yet
-#    elif interval== 'Y':
-#        interval_seconds= 86400*365 #leap years?
-#        addtime= dateutil.relativedelta.relativedelta(years=+1)
     else:
         print ('Define time interval')
 
