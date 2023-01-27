@@ -23,23 +23,23 @@ The run.bat file also require some modifications.
 You need to add your exe software folder path to the run.bat, 
 example: 
 
-"C:\Program Files (x86)\Deltares\Delft3D FM Suite 2019.01 HMWQ (1.5.1.41875)\plugins\DeltaShell.Dimr\kernels\x64\dflowfm\bin\dflowfm-cli.exe" --autostart FlowFM.mdu
+	"C:\Program Files (x86)\Deltares\Delft3D FM Suite 2019.01 HMWQ (1.5.1.41875)\plugins\DeltaShell.Dimr\kernels\x64\dflowfm\bin\dflowfm-cli.exe" --autostart FlowFM.mdu
 
-In the 'FlowFM_temp.mdu', you can change your model parameters, as NetFile, map and his interval. 
+In the 'FlowFM_temp.mdu', you can change your model parameters, as NetFile, map, his and rst interval. 
 This is up to you to change according to your model necessities, however, it is required to keep:
 
-RefDate           = RefDate_replace
-TStop             = TStop_replace
-RestartFile       = RestartFile_replace
-HisFile           = His_File_replace
-MapFile           = MapFile_replace
+	RefDate           = RefDate_replace
+	TStop             = TStop_replace
+	RestartFile       = RestartFile_replace
+	HisFile           = His_File_replace
+	MapFile           = MapFile_replace
 
 In the script 'run_delft.py', you can change the definition of these keywords, so don't forget to change this file. 
 
 After these alterations, using Anaconda Prompt, use command lines  to start the simulation:
 
-C: 				(choose your working disk)
+	C: 				(choose your working disk)
 
-cd C:\Your\Simulation\Path	(this will leave you in your simulation folder)
+	cd C:\Your\Simulation\Path	(this will leave you in your simulation folder)
 
-python run_delft.py		(this will run your simulation)
+	python run_delft.py		(this will run your simulation)
