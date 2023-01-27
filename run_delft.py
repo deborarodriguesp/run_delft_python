@@ -74,14 +74,6 @@ def edit_mdu_file ():
         else:
             fin_model.writelines(lin)
 
-    
-#        elif actual_date_py == start_date_py:
-#                lin = lin.replace("RestartFile_replace", str(rest))
-#                fin_model.writelines(lin)
-#                print (lin)
-               # Preciso adicionar o nome do restart file!!! E precisa ser do dia anterior, 
-                #pq o modelo nao ta rodando em modo continuo
-
     fin_template.close()
     fin_model.close()
     
