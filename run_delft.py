@@ -37,9 +37,9 @@ end_date_py = datetime.datetime.strptime(end_date, '%Y%m%d')
 def edit_mdu_file ():
 
 # Here we edit the MDU file. 
-# For now, four changes are being made, the RefDate (day of simulation)
+# For now, five changes are being made, the RefDate (day of simulation)
 # the TStop, the definition of when the model needs to stop running and closing the output files
-# Output names, His and Map files. 
+# Output names, His, Map and Rst files. 
 
     fin_template = open(simulation_folder + 'FlowFM_temp.mdu', 'r')
     fin_model = open(simulation_folder + 'FlowFM.mdu', 'w')
