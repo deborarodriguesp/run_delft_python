@@ -67,7 +67,7 @@ def edit_mdu_file ():
             if actual_date_py > start_date_py:
                 lin = lin.replace("RestartFile_replace", str(restart_name))
                 fin_model.writelines(lin)
-                print (lin)
+                
             else:
                 print ('continuos does not work')
                 
