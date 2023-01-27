@@ -1,7 +1,10 @@
 # run_delft_python
-Script to run Deltares D-Flow Flexible Mesh in python, in different time scale (daily and monthly)
+Script to run Deltares D-Flow Flexible Mesh in python, in different time scale. 
+Here the outputs are at daily and monthly scale, using restart files.  
+
 
 ########################### RUN MODEL ###########################
+
 Run model using python
 
 You will required:
