@@ -37,9 +37,9 @@ end_date_py = datetime.datetime.strptime(end_date, '%Y%m%d')
 def edit_mdu_file ():
 
 # Here we edit the MDU file. 
-# For now, five changes are being made, the RefDate (day of simulation)
+# For now, four changes are being made, the RefDate (day of simulation)
 # the TStop, the definition of when the model needs to stop running and closing the output files
-# Output names, His, Map and Rst files. 
+# Output names, His and Map files. 
 
     fin_template = open(simulation_folder + 'FlowFM_temp.mdu', 'r')
     fin_model = open(simulation_folder + 'FlowFM.mdu', 'w')
@@ -67,9 +67,9 @@ def edit_mdu_file ():
             if actual_date_py > start_date_py:
                 lin = lin.replace("RestartFile_replace", str(restart_name))
                 fin_model.writelines(lin)
-                
+            
             else:
-                print ('continuos does not work')
+                print ('continuos does not work or not started')
                 
         else:
             fin_model.writelines(lin)
@@ -95,24 +95,21 @@ while actual_date_py<=end_date_py:
         interval_seconds = 86400*num_days
         addtime= dateutil.relativedelta.relativedelta(months=+1)
 
+# Year definition is not implemented yet
+#    elif interval== 'Y':
+#        interval_seconds= 86400*365 #leap years?
+#        addtime= dateutil.relativedelta.relativedelta(years=+1)
     else:
         print ('Define time interval')
 
     # Define the output names according to the time running
     map_name = actual_date + '_map.nc'
     his_name = actual_date + '_his.nc'
-    
+    restart_name = results_folder + 'FlowFM_' + actual + '_000000_rst.nc'
     # Here we call the function that edits the mdu file
     edit_mdu_file()
     
     actual_date_py = actual_date_py + addtime #date written in python dates
-    past_date_py = actual_date_py - addtime #date written in python dates
-    past_date = datetime.date.strftime(past_date_py, '%Y%m%d') #date written in string dates
-    
-    # Add here the right name of your restart file. 
-    restart_name = results_folder + 'FlowFM_' + past_date + '_000000_rst.nc'
-    rest = ''
-    #sys.exit
+
     # Call the model.exe
     os.system('run.bat')
-    
