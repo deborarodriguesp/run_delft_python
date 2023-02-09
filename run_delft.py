@@ -105,7 +105,7 @@ while actual_date_py<=end_date_py:
     # Define the output names according to the time running
     map_name = actual_date + '_map.nc'
     his_name = actual_date + '_his.nc'
-    restart_name = results_folder + 'FlowFM_' + actual + '_000000_rst.nc'
+    restart_name = results_folder + 'FlowFM_' + actual_date + '_000000_rst.nc'
     # Here we call the function that edits the mdu file
     edit_mdu_file()
     
